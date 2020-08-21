@@ -26,6 +26,7 @@ jobs:
         registry: ${{ secrets.DockerRegistry }}
         # Docker repository to tag the image with
         repository: zeeko/cn-whitelist-web
+        path: CnWhiteList
         # Automatically tags the built image with the git reference as per the readme
         tag_with_ref: true
         # Always attempt to pull a newer version of the image
