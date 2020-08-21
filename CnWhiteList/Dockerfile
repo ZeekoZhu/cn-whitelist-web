@@ -8,10 +8,11 @@ COPY ./ ./
 RUN dotnet publish -c release -o /app -r linux-musl-x64 --self-contained false --no-restore
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+ENV ASPNETCORE_URLS=http://*:5000
 
 WORKDIR /app
 
 COPY --from=builder /app ./
 
-ENTRYPOINT ["CnWhiteList.App"]
+ENTRYPOINT ["dotnet", "./CnWhiteList.App.dll"]
 
