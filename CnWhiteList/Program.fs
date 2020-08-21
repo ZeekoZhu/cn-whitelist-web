@@ -58,6 +58,7 @@ let configureServices (services: IServiceCollection) =
         .AddMemoryCache()
         .AddHttpClient()
         .AddResponseCaching()
+        .AddApplicationInsightsTelemetry()
     |> ignore
 
 let configureLogging (builder: ILoggingBuilder) =
