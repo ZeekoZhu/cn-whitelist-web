@@ -1,4 +1,4 @@
-FROM zeekozhu/aspnetcore-yarn-build:3.1-alpine as builder
+FROM zeekozhu/aspnetcore-build-yarn:3.1-alpine as builder
 
 WORKDIR /builder
 COPY *.fsproj ./
